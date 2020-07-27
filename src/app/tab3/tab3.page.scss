@@ -1,0 +1,207 @@
+/* ========= TABS HOME PAGE =============== MADE WITH LOVE BY: LIRRUMS */
+
+h1 {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    color: #001848;
+    font-weight: 600;
+}
+
+ion-grid {
+    --ion-grid-padding: 0px !important;
+}
+
+.my-profile-txt {
+    color: #9b9da5 !important;
+    font-size: 15px !important;
+    font-family: "Poppins";
+    text-align: justify !important;
+    padding: 20px;
+}
+
+.pic-txt {
+    display: block;
+    margin: 0px auto;
+}
+
+.col-tres {
+    display: block;
+    margin: 0px auto;
+}
+
+.friends-h1 {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    padding-bottom: 5% !important;
+    padding-top: 5% !important;
+    color: #001848 !important;
+    text-align: left !important;
+}
+
+.col-tres,
+p {
+    text-align: center !important;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: #001848 !important;
+    font-weight: 600;
+    font-family: "Poppins";
+
+}
+
+.col-uno {
+    background: #fff;
+}
+
+.col-dos {
+    padding-bottom: 10%;
+}
+
+.light {
+    background: #fff;
+}
+
+body {
+    background: #ddd;
+}
+
+ion-icon {
+    font-size: 30px;
+    margin-top: 20px;
+    color: #001848;
+}
+
+.icon-sin {
+    font-size: 25px;
+}
+
+.img-avatar {
+
+    width: 45%;
+}
+
+.inte-profile {
+    display: block;
+    margin: 0px auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.bo-profile {
+    color: #9b9da5 !important;
+    font-size: 18px !important;
+    text-align: center !important;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.img-profile {
+    display: block;
+    margin: 0px auto;
+    width: 25%;
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+h3 {
+    color: #001848 !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    font-size: 18px !important;
+}
+
+.h3-txt-pro {
+    color: #001848 !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    font-size: 20px !important;
+    text-align: center;
+}
+
+.p-txt-pro {
+    color: #9b9da5 !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    font-size: 18px !important;
+    padding-bottom: 5%;
+    text-align: center;
+}
+
+h2 {
+    color: #001848;
+    font-weight: 800;
+    font-family: "Poppins";
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.p-txt-syno {
+    color: #9b9da5 !important;
+    padding: 20px;
+    text-align: justify;
+}
+
+.h3-txt-sin {
+    color: #001848 !important;
+    margin-top: 27% !important;
+    margin-bottom: 0px !important;
+    margin-left: 10%;
+}
+
+.p-txt-sin {
+    color: #9b9da5 !important;
+    margin-bottom: 0px !important;
+    margin-left: 10%;
+}
+
+.title-card {
+    padding-left: 5%;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.txt-card {
+    padding-left: 5%;
+}
+
+p {
+    color: #001848 !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.icon-one {
+    color: #fff !important;
+    font-size: 20px !important;
+    margin-top: -2%;
+}
+
+.btn-swap {
+    padding-right: 20px;
+}
+
+.btn-card {
+    padding-left: 0px !important;
+    margin-top: 20%;
+}
+
+:host {
+
+    ion-button {
+        height: 35px;
+        padding-left: 20px;
+    }
+
+    .list-ios {
+        border: 1px solid #fff !important;
+    }
+
+    ion-item {
+        --border-color: #fff !important;
+    }
+}
+
+/* ========= TABS HOME PAGE =============== MADE WITH LOVE BY: LIRRUMS */

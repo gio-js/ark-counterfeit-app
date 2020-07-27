@@ -1,0 +1,97 @@
+/* ========= TABS HOME PAGE =============== MADE WITH LOVE BY: LIRRUMS */
+
+h1 {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  color: #001848;
+  font-weight: 600;
+}
+
+ion-grid {
+  --ion-grid-padding: 0px !important;
+}
+
+.col-uno {
+  margin-top: 8%;
+  background: #fff;
+}
+
+.light {
+  background: #fff;
+}
+
+body {
+  background: #ddd;
+}
+
+ion-icon {
+  font-size: 30px;
+  margin-top: 20px;
+  color: #001848;
+}
+
+.img-avatar {
+
+  width: 20%;
+}
+
+h3 {
+  color: #001848 !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.title-card {
+  padding-left: 5%;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.txt-card {
+  padding-left: 5%;
+}
+
+p {
+  color: #001848 !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.icon-one {
+  color: #fff !important;
+  font-size: 20px !important;
+  margin-top: -2%;
+}
+
+.btn-swap {
+  padding-right: 20px;
+}
+
+.btn-card {
+  padding-left: 0px !important;
+  margin-top: 20%;
+}
+
+:host {
+
+  ion-button {
+    height: 35px;
+    padding-left: 20px;
+    --background: #001848 !important;
+    --background-activated: #fff !important;
+    --color-activated: #001848 !important;
+    --border-color: #001848 !important;
+  }
+
+  .list-ios {
+    border: 1px solid #fff !important;
+  }
+
+  ion-item {
+    --border-color: #fff !important;
+  }
+}
+
+/* ========= TABS HOME PAGE =============== MADE WITH LOVE BY: LIRRUMS */

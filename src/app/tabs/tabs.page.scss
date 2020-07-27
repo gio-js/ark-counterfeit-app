@@ -1,0 +1,11 @@
+:host {
+    ion-tab-bar {
+        padding: 20px;
+        border: none;
+        --background: #001848;
+        --color: #fff;
+        --color-selected: #ddd;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+    }
+}
