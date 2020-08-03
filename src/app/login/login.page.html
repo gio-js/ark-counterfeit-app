@@ -12,12 +12,18 @@
         <form class="form-login">
           <img src="../../assets/imgs/bg.jpg" />
           <ion-item lines="none">
-            <ion-input type="password" placeholder="Passphrase" required class="password-field">
+            <ion-input type="text" placeholder="Username" required class="password-field">
               <ion-icon name="key"></ion-icon>
             </ion-input>
           </ion-item>
 
-          <ion-button expand="block" class="btn" shape="round" [routerLink]="['/tabs/tab1']">Login</ion-button>
+          <ion-item lines="none">
+            <ion-input type="password" placeholder="Passphrase" required class="password-field">
+              <ion-icon name="key"></ion-icon>
+            </ion-input>
+          </ion-item>
+<!-- [routerLink]="['/tabs/tab1']"-->
+          <ion-button expand="block" class="btn" shape="round" (click)="CreateProduct()">Login</ion-button>
           <a href="#" class="create" [routerLink]="['/sign']">Create a wallet</a>
           <div class="spacer"></div>
         </form>
