@@ -11,8 +11,10 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2015",
+    "target": "ES2017",
     "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -24,5 +26,9 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "common/ark-counterfeit-common/src/**/*"
+  ]
 }
