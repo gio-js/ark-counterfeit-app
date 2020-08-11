@@ -16,8 +16,7 @@ const routes: Routes = [
               import('../tab1/tab1.module').then(m => m.Tab1PageModule)
           }
         ]
-      },
-      {
+      }, {
         path: 'tab2',
         children: [
           {
@@ -28,12 +27,22 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab3',
+        path: 'send',
         children: [
           {
             path: '',
             loadChildren: () =>
-              import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+              import('../send/send.module').then(m => m.SendPageModule)
+          }
+        ]
+      },
+      {
+        path: 'receive',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../receive/receive.module').then(m => m.ReceivePageModule)
           }
         ]
       },
@@ -55,4 +64,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TabsPageRoutingModule {}
+export class TabsPageRoutingModule { }

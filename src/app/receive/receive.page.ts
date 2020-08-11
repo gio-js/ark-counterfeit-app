@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-singlebook',
-  templateUrl: './send.page.html',
-  styleUrls: ['./send.page.scss'],
+  templateUrl: './receive.page.html',
+  styleUrls: ['./receive.page.scss'],
 })
-export class SendPage implements OnInit {
+export class ReceivePage implements OnInit {
 
   public codiceProdotto: string;
   constructor() { }

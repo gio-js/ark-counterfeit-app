@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'send',
     loadChildren: () => import('./send/send.module').then( m => m.SendPageModule)
   },
+  {
+    path: 'receive',
+    loadChildren: () => import('./receive/receive.module').then( m => m.ReceivePageModule)
+  },
 ];
 @NgModule({
   imports: [
