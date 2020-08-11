@@ -16,10 +16,6 @@ const routes: Routes = [
     loadChildren: () => import('./sign/sign.module').then( m => m.SignPageModule)
   },
   {
-    path: 'single',
-    loadChildren: () => import('./singlebook/singlebook.module').then( m => m.SinglebookPageModule)
-  },
-  {
     path: 'send',
     loadChildren: () => import('./send/send.module').then( m => m.SendPageModule)
   },
