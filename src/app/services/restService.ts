@@ -3,9 +3,12 @@ import { Injectable } from '@angular/core';
 import { LoginAccountRequest } from 'common/ark-counterfeit-common/src/rest/loginAccountRequest';
 import {
     AnticounterfeitRegisterProductTransaction,
-    RegisterProductBuilder, RegisterProductTransaction
+    RegisterProductBuilder, RegisterProductTransaction, AnticounterfeitRegisterManufacturerTransaction
 } from 'common/ark-counterfeit-common';
-import { RestTransactionContainer, RestResponse, RegisterAccountResponse } from 'common/ark-counterfeit-common/src/rest/models';
+import {
+    RestTransactionContainer, RestResponse,
+    RegisterAccountResponse, ManufacturerResponse
+} from 'common/ark-counterfeit-common/src/rest/models';
 import { VENDOR_FIELD } from 'common/ark-counterfeit-common/src/const';
 import { Managers, Transactions } from '@arkecosystem/crypto';
 
@@ -13,7 +16,7 @@ import { Managers, Transactions } from '@arkecosystem/crypto';
 export class RestService {
 
     private readonly network = 'testnet';
-    private baseUri: string = "http://localhost:8090/api/";
+    private baseUri: string = 'http://localhost:8090/api/';
 
     constructor(private http: HttpClient) {
         this.initCrypto();
@@ -27,13 +30,13 @@ export class RestService {
     }
 
     private async GetNextNonce(addressId: string): Promise<RestResponse<string>> {
-        return await this.http.get(this.baseUri + "manufacturer/nonce/" + addressId).toPromise<any>();
+        return await this.http.get(this.baseUri + 'manufacturer/nonce/' + addressId).toPromise<any>();
     }
 
     public async RegisterProduct(model: AnticounterfeitRegisterProductTransaction): Promise<any> {
 
         // const manufacturerAddressId: string = "AR96ntq6d7PkE1Ws3EKcQRK8QNqgVpMudz";
-        const manufacturerPassphrase: string = "boat dizzy people marriage where betray yard oval split twice arm shove";
+        const manufacturerPassphrase: string = 'boat dizzy people marriage where betray yard oval split twice arm shove';
 
         const nonceResponse = await this.GetNextNonce(model.ManufacturerAddressId);
         console.log(JSON.stringify(nonceResponse));
@@ -48,7 +51,7 @@ export class RestService {
             .getStruct();
 
 
-        const response = await this.http.post(this.baseUri + "products", {
+        const response = await this.http.post(this.baseUri + 'products', {
             Asset: model,
             Nonce: nonce.toString(),
             SenderPublicKey: transaction.senderPublicKey,
@@ -59,21 +62,33 @@ export class RestService {
         return response;
     }
 
-    public async Login(username: string, passphrase: string): Promise<RestResponse<boolean>> {
-        return await this.http.post(this.baseUri + "account/login", {
+    public async Login(username: string, addressId: string): Promise<RestResponse<boolean>> {
+        return await this.http.post(this.baseUri + 'account/login', {
             Username: username,
-            Passphrase: passphrase
+            AddressId: addressId
         }).toPromise<any>();
     }
 
     public async CreateWallet(username: string): Promise<RestResponse<RegisterAccountResponse>> {
-        return await this.http.post(this.baseUri + "account", {
+        return await this.http.post(this.baseUri + 'account', {
             Username: username
         }).toPromise<any>();
     }
 
     public async UsernameExists(username: string): Promise<boolean> {
-        const result: RestResponse<boolean> = await this.http.get(this.baseUri + "account/" + username + "/exists").toPromise<any>();
+        const result: RestResponse<boolean> = await this.http.get(this.baseUri + 'account/' + username + '/exists').toPromise<any>();
+        return result.Data;
+    }
+
+    public async GetManufacturers(): Promise<ManufacturerResponse[]> {
+        const result: RestResponse<ManufacturerResponse[]> =
+            await this.http.get(this.baseUri + 'manufacturer').toPromise<any>();
+        return result.Data;
+    }
+
+    public async GetProductsByManufacturer(addressId: string): Promise<AnticounterfeitRegisterProductTransaction[]> {
+        const result: RestResponse<AnticounterfeitRegisterProductTransaction[]> =
+            await this.http.get(this.baseUri + 'products/manufacturer/' + addressId).toPromise<any>();
         return result.Data;
     }
 }

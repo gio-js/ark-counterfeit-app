@@ -18,10 +18,9 @@
           </ion-item>
 
           <ion-item lines="none">
-            <ion-text>
+            <ion-input type="text" name="passprase" [(ngModel)]="generatedPassphrase" readonly>
               <ion-icon name="key"></ion-icon>
-              {{ generatedPassphrase }}
-            </ion-text>
+            </ion-input>
           </ion-item>
 
           <ion-button expand="block" class="btn" shape="round" (click)="CreaWallet()">Crea wallet</ion-button>

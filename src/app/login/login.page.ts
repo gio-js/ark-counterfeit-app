@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { RestService } from '../services/restService';
 import { Router } from '@angular/router';
 import { StorageService } from '../services/storageService';
+import { Identities } from '@arkecosystem/crypto';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +13,10 @@ import { StorageService } from '../services/storageService';
 export class LoginPage implements OnInit {
 
   constructor(
-    private restService: RestService, 
-    private storageService: StorageService, 
-    private router: Router) { }
+    private restService: RestService,
+    private storageService: StorageService,
+    private router: Router,
+    private alertCtrl: AlertController) { }
 
   public username: string;
   public passphrase: string;
@@ -22,10 +25,21 @@ export class LoginPage implements OnInit {
   }
 
   public async Login() {
-    const result = await this.restService.Login(this.username, this.passphrase);
+    // username: gio3
+    // password: flat health urge window citizen thing shock pudding wire flower apple engage
+
+    const addressId = Identities.Address.fromPassphrase(this.passphrase);
+    const result = await this.restService.Login(this.username, addressId);
     if (result.Data === true) {
       this.storageService.LoginPassphrase = this.passphrase;
       this.router.navigateByUrl('/tabs/tab1');
+    } else {
+      const alert = await this.alertCtrl.create({
+        header: 'Errore',
+        subHeader: 'Errore durante il login, username of passphrase non validi.',
+        buttons: ['Dismiss']
+      });
+      alert.present();
     }
   }
 

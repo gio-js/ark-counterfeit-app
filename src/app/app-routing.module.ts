@@ -18,7 +18,11 @@ const routes: Routes = [
   {
     path: 'single',
     loadChildren: () => import('./singlebook/singlebook.module').then( m => m.SinglebookPageModule)
-  }
+  },
+  {
+    path: 'send',
+    loadChildren: () => import('./send/send.module').then( m => m.SendPageModule)
+  },
 ];
 @NgModule({
   imports: [

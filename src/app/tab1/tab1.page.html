@@ -1,48 +1,46 @@
-<!-- ========= TABS HOME PAGE =============== MADE WITH LOVE BY: LIRRUMS -->
 <ion-content scrollX="true" scrollY="true" color="medium">
   <ion-grid>
     <ion-row class="light">
       <ion-col size="10">
         <div>
-          <h1>Discover</h1>
-          <ion-button shape="round" style="margin-bottom: -4%;"
-            >Add book</ion-button
-          >
+          <h1>Aziende</h1>
+          <!-- <ion-button shape="round" style="margin-bottom: -4%;">Add book</ion-button> -->
         </div>
       </ion-col>
       <ion-col size="2">
         <div>
-          <ion-icon name="notifications-outline" slot="start"></ion-icon>
+          <ion-icon name="business" slot="start"></ion-icon>
         </div>
       </ion-col>
     </ion-row>
 
-    <ion-row class="col-uno">
+    <ion-row class="col-uno" *ngFor="let m of manufacturers">
       <ion-col size="8">
         <ion-list lines="none">
           <ion-item lines="none">
             <ion-avatar slot="start">
-              <img src="https://img.icons8.com/bubbles/50/000000/user.png" />
+              <img src="../../assets/imgs/manufacturer.png" />
             </ion-avatar>
             <ion-label>
-              <h3>Luke Jacobs</h3>
-              <p>I feel the good in you, the conflict...</p>
+              <h3>{{ m.CompanyFiscalCode }} / {{ m.ProductPrefixId }}</h3>
+              <p>{{ m.CompanyName }}</p>
             </ion-label>
           </ion-item>
         </ion-list>
       </ion-col>
       <ion-col size="4" class="btn-swap">
-        <ion-button
-          expand="full"
-          shape="round"
-          color="warning"
-          class="btn-card"
-          [routerLink]="['/single']"
-        >
-          Swap
+        <ion-button expand="full" shape="round" color="warning" class="btn-card" [routerLink]="['/tabs/tab2']" [queryParams]="{ addressId: m.AddressId }">
+          Prodotti
         </ion-button>
       </ion-col>
       <ion-col size="12">
+        <ion-item lines="none">
+          <ion-label>
+            <p>Address: {{ m.AddressId }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+      <!-- <ion-col size="12">
         <ion-list lines="none">
           <ion-item>
             <img src="../../assets/imgs/book2.png" class="img-avatar" />
@@ -54,8 +52,11 @@
             </ion-label>
           </ion-item>
         </ion-list>
-      </ion-col>
+      </ion-col> -->
     </ion-row>
+
+    <!--
+  
     <ion-row class="col-uno">
       <ion-col size="12">
         <ion-list lines="none">
@@ -203,8 +204,10 @@
           </ion-item>
         </ion-list>
       </ion-col>
+   
+   
     </ion-row>
+
+  -->
   </ion-grid>
 </ion-content>
-
-<!-- ========= TABS HOME PAGE =============== MADE WITH LOVE BY: LIRRUMS -->

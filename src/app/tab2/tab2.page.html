@@ -1,67 +1,47 @@
-<!-- ========= TABS2 HOME PAGE =============== MADE WITH LOVE BY: LIRRUMS -->
-
 <ion-content scrollX="true" scrollY="true" color="medium">
   <ion-grid>
     <ion-row class="light">
       <ion-col size="10">
         <div>
-          <h1>Challenges</h1>
+          <h1>Prodotti</h1>
         </div>
       </ion-col>
       <ion-col size="2">
         <div>
-          <ion-icon name="notifications-outline" slot="start"></ion-icon>
+          <ion-icon name="grid-outline" slot="start"></ion-icon>
         </div>
       </ion-col>
     </ion-row>
 
-    <ion-row id="col-challenges">
-      <ion-col size="6" style="padding:20px">
-        <ion-button shape="round" color="danger">My Challenges </ion-button>
-      </ion-col>
-      <ion-col size="6" style="padding:20px">
-        <ion-text color="danger">
-          <h5>Friends Chall...</h5>
-        </ion-text>
-      </ion-col>
-      <ion-col size="12" class="col-uno">
-        <p class="p-txt-chall">
-          You have not done any<br />Challenges yet. Let's do done!
-        </p>
-        <img src="../../assets/imgs/img2.png" class="img-chall" />
+    <ion-row *ngIf="products.length === 0">
+      <ion-col size="11" class="ion-col-chall">
+        <ion-list lines="none">
+          <ion-item class="col-dos">
+            <ion-label>
+              
+              <p class="txt-card">
+                Nessun prodotto registrato dal produttore.
+              </p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
       </ion-col>
     </ion-row>
-
-    <h2 class="h2-chall">Choose Challenge</h2>
-    <ion-row>
+    <ion-row *ngFor="let p of products">
       <ion-col size="11" class="ion-col-chall">
         <ion-list lines="none">
           <ion-item class="col-dos">
             <ion-label>
-              <h3 class="title-card">Read 5 books on February</h3>
+              <h3 class="title-card">{{ p.ProductId }}</h3>
               <p class="txt-card">
-                Start Challenge
+                {{ p.Description }}
               </p>
             </ion-label>
-            <img src="../../assets/imgs/img3.png" class="img-avatar" />
+            <img src="../../assets/imgs/product.png" class="img-avatar" />
           </ion-item>
         </ion-list>
       </ion-col>
-      <ion-col size="11" class="ion-col-chall">
-        <ion-list lines="none">
-          <ion-item class="col-dos">
-            <ion-label>
-              <h3 class="title-card">Read 5 books on March</h3>
-              <p class="txt-card">
-                Start Challenge
-              </p>
-            </ion-label>
-            <img src="../../assets/imgs/img3.png" class="img-avatar" />
-          </ion-item>
-        </ion-list>
-      </ion-col>
-
-      <ion-col size="11" class="ion-col-chall">
+      <!-- <ion-col size="11" class="ion-col-chall">
         <ion-list lines="none">
           <ion-item class="col-dos">
             <ion-label>
@@ -73,8 +53,7 @@
             <img src="../../assets/imgs/img3.png" class="img-avatar" />
           </ion-item>
         </ion-list>
-      </ion-col>
+      </ion-col> -->
     </ion-row>
   </ion-grid>
 </ion-content>
-<!-- ========= TABS2 HOME PAGE =============== MADE WITH LOVE BY: LIRRUMS -->
