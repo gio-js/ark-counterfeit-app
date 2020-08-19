@@ -16,7 +16,7 @@ import { Managers, Transactions } from '@arkecosystem/crypto';
 export class RestService {
 
     private readonly network = 'testnet';
-    private baseUri: string = 'http://localhost:8090/api/';
+    private baseUri: string = 'http://80.211.134.204:8090/api/';
 
     constructor(private http: HttpClient) {
         this.initCrypto();
