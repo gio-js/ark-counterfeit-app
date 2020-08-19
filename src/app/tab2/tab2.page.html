@@ -34,10 +34,11 @@
             <ion-label>
               <h3 class="title-card">{{ p.ProductId }}</h3>
               <p class="txt-card">
-                {{ p.Description }}
+                {{ p.Description }}<br />
+                <strong>Proprietario:</strong><br />{{ p.CurrentOwnerAddressId }}
               </p>
             </ion-label>
-            <img src="../../assets/imgs/product.png" class="img-avatar" />
+            <!-- <img src="../../assets/imgs/product.png" class="img-avatar" /> -->
           </ion-item>
         </ion-list>
       </ion-col>

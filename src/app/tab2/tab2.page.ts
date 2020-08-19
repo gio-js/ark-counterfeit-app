@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AnticounterfeitRegisterProductTransaction } from 'common/ark-counterfeit-common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { RestService } from '../services/restService';
+import { ProductResponse } from 'common/ark-counterfeit-common/src/rest/models';
 
 @Component({
   selector: 'app-tab2',
@@ -10,7 +10,7 @@ import { RestService } from '../services/restService';
 })
 export class Tab2Page implements OnInit {
 
-  public products: AnticounterfeitRegisterProductTransaction[] = [];
+  public products: ProductResponse[] = [];
   constructor(
     private route: ActivatedRoute,
     private router: Router,
