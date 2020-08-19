@@ -2148,7 +2148,7 @@ let RestService = class RestService {
     constructor(http) {
         this.http = http;
         this.network = 'testnet';
-        this.baseUri = 'http://localhost:8090/api/';
+        this.baseUri = 'http://80.211.134.204:8090/api/';
         this.initCrypto = async () => {
             crypto_1.Managers.configManager.setFromPreset(this.network);
             crypto_1.Managers.configManager.setHeight(1632); //await this.getLatestBlockHeight());

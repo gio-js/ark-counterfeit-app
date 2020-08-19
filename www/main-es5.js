@@ -3218,7 +3218,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
         this.http = http;
         this.network = 'testnet';
-        this.baseUri = 'http://localhost:8090/api/';
+        this.baseUri = 'http://80.211.134.204:8090/api/';
 
         this.initCrypto = function _callee3() {
           return regeneratorRuntime.async(function _callee3$(_context6) {
