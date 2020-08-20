@@ -3403,15 +3403,15 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
     var RestService =
     /*#__PURE__*/
     function () {
+      //private baseUri: string = 'http://127.0.0.1:8090/api/';
       function RestService(http) {
         var _this9 = this;
 
         _classCallCheck(this, RestService);
 
         this.http = http;
-        this.network = 'testnet'; // private baseUri: string = 'http://80.211.134.204:8090/api/';
-
-        this.baseUri = 'http://127.0.0.1:8090/api/';
+        this.network = 'testnet';
+        this.baseUri = 'http://80.211.134.204:8090/api/';
 
         this.initCrypto = function _callee3() {
           return regeneratorRuntime.async(function _callee3$(_context6) {

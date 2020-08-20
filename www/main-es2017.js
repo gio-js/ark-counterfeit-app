@@ -2259,11 +2259,11 @@ const ark_counterfeit_common_1 = __webpack_require__(/*! common/ark-counterfeit-
 const const_1 = __webpack_require__(/*! common/ark-counterfeit-common/src/const */ "./common/ark-counterfeit-common/src/const.ts");
 const crypto_1 = __webpack_require__(/*! @arkecosystem/crypto */ "./node_modules/@arkecosystem/crypto/dist/index.bundled.js");
 let RestService = class RestService {
+    //private baseUri: string = 'http://127.0.0.1:8090/api/';
     constructor(http) {
         this.http = http;
         this.network = 'testnet';
-        // private baseUri: string = 'http://80.211.134.204:8090/api/';
-        this.baseUri = 'http://127.0.0.1:8090/api/';
+        this.baseUri = 'http://80.211.134.204:8090/api/';
         this.initCrypto = async () => {
             crypto_1.Managers.configManager.setFromPreset(this.network);
             crypto_1.Managers.configManager.setHeight(1632); //await this.getLatestBlockHeight());
