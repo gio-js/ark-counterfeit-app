@@ -16,7 +16,8 @@ import { Managers, Transactions } from '@arkecosystem/crypto';
 export class RestService {
 
     private readonly network = 'testnet';
-    private baseUri: string = 'http://80.211.134.204:8090/api/';
+    // private baseUri: string = 'http://80.211.134.204:8090/api/';
+    private baseUri: string = 'http://127.0.0.1:8090/api/';
 
     constructor(private http: HttpClient) {
         this.initCrypto();
@@ -140,6 +141,12 @@ export class RestService {
     public async GetProductsByManufacturer(addressId: string): Promise<ProductResponse[]> {
         const result: RestResponse<ProductResponse[]> =
             await this.http.get(this.baseUri + 'products/manufacturer/' + addressId).toPromise<any>();
+        return result.Data;
+    }
+
+    public async GetProductsByOwner(addressId: string): Promise<ProductResponse[]> {
+        const result: RestResponse<ProductResponse[]> =
+            await this.http.get(this.baseUri + 'products/owner/' + addressId).toPromise<any>();
         return result.Data;
     }
 }

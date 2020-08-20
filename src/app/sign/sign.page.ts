@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { RestService } from '../services/restService';
 import { AlertController } from '@ionic/angular';
 
@@ -11,7 +11,7 @@ export class SignPage implements OnInit {
   public username: string;
   public generatedPassphrase: string = 'Passphrase generata (readonly)';
 
-    constructor(private restService: RestService, private alertCtrl: AlertController) { }
+  constructor(private restService: RestService, private alertCtrl: AlertController, private ngZone: NgZone) { }
 
   ngOnInit() {
   }
@@ -29,7 +29,7 @@ export class SignPage implements OnInit {
     }
 
     const usernameExists = await this.restService.UsernameExists(this.username);
-    if (usernameExists === true){
+    if (usernameExists === true) {
       const alert = await this.alertCtrl.create({
         header: 'Errore',
         subHeader: 'L\'utente esiste già.',
@@ -40,9 +40,8 @@ export class SignPage implements OnInit {
       return;
     }
 
-    this.generatedPassphrase = 'Generazione in corso...';
-    this.restService.CreateWallet(this.username).then(registerWalletResponse => {
-      this.generatedPassphrase = registerWalletResponse.Data.Passphrase;
-    });
+    this.ngZone.run(() => this.generatedPassphrase = 'Generazione in corso...');
+    const registerWalletResponse = await this.restService.CreateWallet(this.username);
+    this.ngZone.run(() => this.generatedPassphrase = registerWalletResponse.Data.Passphrase);
   }
 }

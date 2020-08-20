@@ -47,6 +47,20 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'mine',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../mine/mine.module').then(m => m.MinePageModule)
+          }
+        ]
+      },
+      {
+        path: 'login',
+        redirectTo: '/login'
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
