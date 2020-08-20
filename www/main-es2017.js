@@ -1209,6 +1209,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/mine/mine.page.html":
+/*!***************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/mine/mine.page.html ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-content scrollX=\"true\" scrollY=\"true\" color=\"medium\">\n  <ion-grid>\n    <ion-row class=\"light\">\n      <ion-col size=\"10\">\n        <div>\n          <h1>I tuoi prodotti</h1>\n        </div>\n      </ion-col>\n      <ion-col size=\"2\">\n        <div>\n          <ion-icon name=\"grid-outline\" slot=\"start\"></ion-icon>\n        </div>\n      </ion-col>\n    </ion-row>\n\n    <ion-row *ngIf=\"products.length === 0\">\n      <ion-col size=\"11\" class=\"ion-col-chall\">\n        <ion-list lines=\"none\">\n          <ion-item class=\"col-dos\">\n            <ion-label>\n              \n              <p class=\"txt-card\">\n                Nessun prodotto in possesso.\n              </p>\n            </ion-label>\n          </ion-item>\n        </ion-list>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngFor=\"let p of products\">\n      <ion-col size=\"11\" class=\"ion-col-chall\">\n        <ion-list lines=\"none\">\n          <ion-item class=\"col-dos\">\n            <ion-label>\n              <h3 class=\"title-card\">{{ p.ProductId }}</h3>\n              <p class=\"txt-card\">\n                {{ p.Description }}<br />\n                <strong>Proprietario:</strong><br />{{ p.CurrentOwnerAddressId }}\n              </p>\n            </ion-label>\n            <!-- <img src=\"../../assets/imgs/product.png\" class=\"img-avatar\" /> -->\n          </ion-item>\n        </ion-list>\n      </ion-col>\n      <!-- <ion-col size=\"11\" class=\"ion-col-chall\">\n        <ion-list lines=\"none\">\n          <ion-item class=\"col-dos\">\n            <ion-label>\n              <h3 class=\"title-card\">Read 5 books on April</h3>\n              <p class=\"txt-card\">\n                Start Challenge\n              </p>\n            </ion-label>\n            <img src=\"../../assets/imgs/img3.png\" class=\"img-avatar\" />\n          </ion-item>\n        </ion-list>\n      </ion-col> -->\n    </ion-row>\n  </ion-grid>\n</ion-content>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/receive/receive.page.html":
 /*!*********************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/receive/receive.page.html ***!
@@ -1283,7 +1296,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-tabs>\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"tab1\">\n      <ion-icon name=\"business\"></ion-icon>\n      <ion-label>Aziende</ion-label>\n      <!-- <ion-badge color=\"primary\">6</ion-badge> -->\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"send\">\n      <ion-icon name=\"send\"></ion-icon>\n      <ion-label>Invia</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"receive\">\n      <ion-icon name=\"pricetags\"></ion-icon>\n      <ion-label>Ricevi</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n</ion-tabs>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-tabs>\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"tab1\">\n      <ion-icon name=\"business\"></ion-icon>\n      <ion-label>Aziende</ion-label>\n      <!-- <ion-badge color=\"primary\">6</ion-badge> -->\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"send\">\n      <ion-icon name=\"send\"></ion-icon>\n      <ion-label>Invia</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"receive\">\n      <ion-icon name=\"pricetags\"></ion-icon>\n      <ion-label>Ricevi</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"mine\">\n      <ion-icon name=\"grid\"></ion-icon>\n      <ion-label>Miei prodotti</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"login\">\n      <ion-icon name=\"key\"></ion-icon>\n      <ion-label>Logout</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n</ion-tabs>\n");
 
 /***/ }),
 
@@ -1821,6 +1834,107 @@ exports.LoginPage = LoginPage;
 
 /***/ }),
 
+/***/ "./src/app/mine/mine.module.ts":
+/*!*************************************!*\
+  !*** ./src/app/mine/mine.module.ts ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+const angular_1 = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
+const router_1 = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+const core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+const common_1 = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm2015/common.js");
+const forms_1 = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+const mine_page_1 = __webpack_require__(/*! ./mine.page */ "./src/app/mine/mine.page.ts");
+let MinePageModule = class MinePageModule {
+};
+MinePageModule = tslib_1.__decorate([
+    core_1.NgModule({
+        imports: [
+            angular_1.IonicModule,
+            common_1.CommonModule,
+            forms_1.FormsModule,
+            router_1.RouterModule.forChild([{ path: '', component: mine_page_1.MinePage }])
+        ],
+        declarations: [mine_page_1.MinePage]
+    })
+], MinePageModule);
+exports.MinePageModule = MinePageModule;
+
+
+/***/ }),
+
+/***/ "./src/app/mine/mine.page.scss":
+/*!*************************************!*\
+  !*** ./src/app/mine/mine.page.scss ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("h1 {\n  padding-left: 20px;\n  padding-right: 20px;\n  font-family: \"Poppins\", sans-serif;\n  font-size: 30px;\n  color: #001848;\n  font-weight: 600;\n}\n\nion-grid {\n  --ion-grid-padding: 0px !important;\n}\n\n.light {\n  background: #fff;\n  padding-bottom: 10%;\n}\n\nbody {\n  background: #ddd;\n}\n\nion-icon {\n  font-size: 30px;\n  margin-top: 20px;\n  color: #001848;\n}\n\n.img-avatar {\n  width: 35%;\n}\n\nh3 {\n  color: #001848 !important;\n  margin-top: 0px !important;\n  margin-bottom: 0px !important;\n}\n\n.title-card {\n  padding-left: 5%;\n  font-size: 16px;\n  font-weight: 700;\n}\n\n.txt-card {\n  padding-left: 5%;\n}\n\np {\n  color: #001848 !important;\n  margin-top: 0px !important;\n  margin-bottom: 0px !important;\n}\n\n.icon-one {\n  color: #fff !important;\n  font-size: 20px !important;\n  margin-top: -2%;\n}\n\n.btn-swap {\n  padding-right: 20px;\n}\n\n.btn-card {\n  padding-left: 0px !important;\n  margin-top: 20%;\n}\n\nh5 {\n  margin-top: 34px !important;\n  font-family: \"Poppins\" !important;\n}\n\n.p-txt-chall {\n  font-family: \"Poppins\";\n  font-size: 15px;\n  text-align: center;\n  font-weight: 600;\n  color: #9b9da5 !important;\n  padding-top: 5%;\n}\n\n.h2-chall {\n  color: #001848;\n  font-family: \"Poppins\";\n  text-align: left;\n  padding-left: 4%;\n  padding-bottom: 5%;\n  padding-top: 5%;\n  font-weight: 800;\n}\n\n.col-dos {\n  padding-top: 10%;\n  background: #fff;\n  padding: 5%;\n}\n\n.img-chall {\n  display: block;\n  margin: 0px auto;\n  width: 100%;\n}\n\n.ion-col-chall {\n  display: block;\n  margin: 0px auto;\n}\n\n:host ion-button {\n  margin-top: 15%;\n  --background: #001848 !important;\n  --background-activated: #fff !important;\n  --color-activated: #001848 !important;\n  --border-color: #001848 !important;\n  font-family: \"Poppins\" !important;\n}\n\n:host .list-ios {\n  border: 1px solid #fff !important;\n  border-radius: 10px;\n}\n\n:host ion-item {\n  --border-color: #fff !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbWluZS9DOlxcVXNlcnNcXEdJT1ZBTk5JXFxEb2N1bWVudHNcXEdpdEh1YlxcYXJrLWNvdW50ZXJmZWl0LWFwcC9zcmNcXGFwcFxcbWluZVxcbWluZS5wYWdlLnNjc3MiLCJzcmMvYXBwL21pbmUvbWluZS5wYWdlLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSSxrQkFBQTtFQUNBLG1CQUFBO0VBQ0Esa0NBQUE7RUFDQSxlQUFBO0VBQ0EsY0FBQTtFQUNBLGdCQUFBO0FDQ0o7O0FERUE7RUFDSSxrQ0FBQTtBQ0NKOztBREdBO0VBQ0ksZ0JBQUE7RUFDQSxtQkFBQTtBQ0FKOztBREdBO0VBQ0ksZ0JBQUE7QUNBSjs7QURHQTtFQUNJLGVBQUE7RUFDQSxnQkFBQTtFQUNBLGNBQUE7QUNBSjs7QURHQTtFQUVJLFVBQUE7QUNESjs7QURJQTtFQUNJLHlCQUFBO0VBQ0EsMEJBQUE7RUFDQSw2QkFBQTtBQ0RKOztBRElBO0VBQ0ksZ0JBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7QUNESjs7QURJQTtFQUNJLGdCQUFBO0FDREo7O0FESUE7RUFDSSx5QkFBQTtFQUNBLDBCQUFBO0VBQ0EsNkJBQUE7QUNESjs7QURJQTtFQUNJLHNCQUFBO0VBQ0EsMEJBQUE7RUFDQSxlQUFBO0FDREo7O0FESUE7RUFDSSxtQkFBQTtBQ0RKOztBRElBO0VBQ0ksNEJBQUE7RUFDQSxlQUFBO0FDREo7O0FETUE7RUFDSSwyQkFBQTtFQUNBLGlDQUFBO0FDSEo7O0FETUE7RUFDSSxzQkFBQTtFQUNBLGVBQUE7RUFDQSxrQkFBQTtFQUNBLGdCQUFBO0VBQ0EseUJBQUE7RUFDQSxlQUFBO0FDSEo7O0FETUE7RUFDSSxjQUFBO0VBQ0Esc0JBQUE7RUFDQSxnQkFBQTtFQUNBLGdCQUFBO0VBQ0Esa0JBQUE7RUFDQSxlQUFBO0VBQ0EsZ0JBQUE7QUNISjs7QURNQTtFQUNJLGdCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0FDSEo7O0FETUE7RUFDSSxjQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0FDSEo7O0FETUE7RUFDSSxjQUFBO0VBQ0EsZ0JBQUE7QUNISjs7QURRSTtFQUNJLGVBQUE7RUFDQSxnQ0FBQTtFQUNBLHVDQUFBO0VBQ0EscUNBQUE7RUFDQSxrQ0FBQTtFQUNBLGlDQUFBO0FDTFI7O0FEUUk7RUFDSSxpQ0FBQTtFQUNBLG1CQUFBO0FDTlI7O0FEU0k7RUFDSSwrQkFBQTtBQ1BSIiwiZmlsZSI6InNyYy9hcHAvbWluZS9taW5lLnBhZ2Uuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbImgxIHtcbiAgICBwYWRkaW5nLWxlZnQ6IDIwcHg7XG4gICAgcGFkZGluZy1yaWdodDogMjBweDtcbiAgICBmb250LWZhbWlseTogJ1BvcHBpbnMnLCBzYW5zLXNlcmlmO1xuICAgIGZvbnQtc2l6ZTogMzBweDtcbiAgICBjb2xvcjogIzAwMTg0ODtcbiAgICBmb250LXdlaWdodDogNjAwO1xufVxuXG5pb24tZ3JpZCB7XG4gICAgLS1pb24tZ3JpZC1wYWRkaW5nOiAwcHggIWltcG9ydGFudDtcbn1cblxuXG4ubGlnaHQge1xuICAgIGJhY2tncm91bmQ6ICNmZmY7XG4gICAgcGFkZGluZy1ib3R0b206IDEwJTtcbn1cblxuYm9keSB7XG4gICAgYmFja2dyb3VuZDogI2RkZDtcbn1cblxuaW9uLWljb24ge1xuICAgIGZvbnQtc2l6ZTogMzBweDtcbiAgICBtYXJnaW4tdG9wOiAyMHB4O1xuICAgIGNvbG9yOiAjMDAxODQ4O1xufVxuXG4uaW1nLWF2YXRhciB7XG5cbiAgICB3aWR0aDogMzUlO1xufVxuXG5oMyB7XG4gICAgY29sb3I6ICMwMDE4NDggIWltcG9ydGFudDtcbiAgICBtYXJnaW4tdG9wOiAwcHggIWltcG9ydGFudDtcbiAgICBtYXJnaW4tYm90dG9tOiAwcHggIWltcG9ydGFudDtcbn1cblxuLnRpdGxlLWNhcmQge1xuICAgIHBhZGRpbmctbGVmdDogNSU7XG4gICAgZm9udC1zaXplOiAxNnB4O1xuICAgIGZvbnQtd2VpZ2h0OiA3MDA7XG59XG5cbi50eHQtY2FyZCB7XG4gICAgcGFkZGluZy1sZWZ0OiA1JTtcbn1cblxucCB7XG4gICAgY29sb3I6ICMwMDE4NDggIWltcG9ydGFudDtcbiAgICBtYXJnaW4tdG9wOiAwcHggIWltcG9ydGFudDtcbiAgICBtYXJnaW4tYm90dG9tOiAwcHggIWltcG9ydGFudDtcbn1cblxuLmljb24tb25lIHtcbiAgICBjb2xvcjogI2ZmZiAhaW1wb3J0YW50O1xuICAgIGZvbnQtc2l6ZTogMjBweCAhaW1wb3J0YW50O1xuICAgIG1hcmdpbi10b3A6IC0yJTtcbn1cblxuLmJ0bi1zd2FwIHtcbiAgICBwYWRkaW5nLXJpZ2h0OiAyMHB4O1xufVxuXG4uYnRuLWNhcmQge1xuICAgIHBhZGRpbmctbGVmdDogMHB4ICFpbXBvcnRhbnQ7XG4gICAgbWFyZ2luLXRvcDogMjAlO1xufVxuXG4jY29sLWNoYWxsZW5nZXMge31cblxuaDUge1xuICAgIG1hcmdpbi10b3A6IDM0cHggIWltcG9ydGFudDtcbiAgICBmb250LWZhbWlseTogXCJQb3BwaW5zXCIgIWltcG9ydGFudDtcbn1cblxuLnAtdHh0LWNoYWxsIHtcbiAgICBmb250LWZhbWlseTogXCJQb3BwaW5zXCI7XG4gICAgZm9udC1zaXplOiAxNXB4O1xuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcbiAgICBmb250LXdlaWdodDogNjAwO1xuICAgIGNvbG9yOiAjOWI5ZGE1ICFpbXBvcnRhbnQ7XG4gICAgcGFkZGluZy10b3A6IDUlO1xufVxuXG4uaDItY2hhbGwge1xuICAgIGNvbG9yOiAjMDAxODQ4O1xuICAgIGZvbnQtZmFtaWx5OiBcIlBvcHBpbnNcIjtcbiAgICB0ZXh0LWFsaWduOiBsZWZ0O1xuICAgIHBhZGRpbmctbGVmdDogNCU7XG4gICAgcGFkZGluZy1ib3R0b206IDUlO1xuICAgIHBhZGRpbmctdG9wOiA1JTtcbiAgICBmb250LXdlaWdodDogODAwO1xufVxuXG4uY29sLWRvcyB7XG4gICAgcGFkZGluZy10b3A6IDEwJTtcbiAgICBiYWNrZ3JvdW5kOiAjZmZmO1xuICAgIHBhZGRpbmc6IDUlO1xufVxuXG4uaW1nLWNoYWxsIHtcbiAgICBkaXNwbGF5OiBibG9jaztcbiAgICBtYXJnaW46IDBweCBhdXRvO1xuICAgIHdpZHRoOiAxMDAlO1xufVxuXG4uaW9uLWNvbC1jaGFsbCB7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gICAgbWFyZ2luOiAwcHggYXV0bztcbn1cblxuOmhvc3Qge1xuXG4gICAgaW9uLWJ1dHRvbiB7XG4gICAgICAgIG1hcmdpbi10b3A6IDE1JTtcbiAgICAgICAgLS1iYWNrZ3JvdW5kOiAjMDAxODQ4ICFpbXBvcnRhbnQ7XG4gICAgICAgIC0tYmFja2dyb3VuZC1hY3RpdmF0ZWQ6ICNmZmYgIWltcG9ydGFudDtcbiAgICAgICAgLS1jb2xvci1hY3RpdmF0ZWQ6ICMwMDE4NDggIWltcG9ydGFudDtcbiAgICAgICAgLS1ib3JkZXItY29sb3I6ICMwMDE4NDggIWltcG9ydGFudDtcbiAgICAgICAgZm9udC1mYW1pbHk6IFwiUG9wcGluc1wiICFpbXBvcnRhbnQ7XG4gICAgfVxuXG4gICAgLmxpc3QtaW9zIHtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgI2ZmZiAhaW1wb3J0YW50O1xuICAgICAgICBib3JkZXItcmFkaXVzOiAxMHB4O1xuICAgIH1cblxuICAgIGlvbi1pdGVtIHtcbiAgICAgICAgLS1ib3JkZXItY29sb3I6ICNmZmYgIWltcG9ydGFudDtcbiAgICB9XG59IiwiaDEge1xuICBwYWRkaW5nLWxlZnQ6IDIwcHg7XG4gIHBhZGRpbmctcmlnaHQ6IDIwcHg7XG4gIGZvbnQtZmFtaWx5OiBcIlBvcHBpbnNcIiwgc2Fucy1zZXJpZjtcbiAgZm9udC1zaXplOiAzMHB4O1xuICBjb2xvcjogIzAwMTg0ODtcbiAgZm9udC13ZWlnaHQ6IDYwMDtcbn1cblxuaW9uLWdyaWQge1xuICAtLWlvbi1ncmlkLXBhZGRpbmc6IDBweCAhaW1wb3J0YW50O1xufVxuXG4ubGlnaHQge1xuICBiYWNrZ3JvdW5kOiAjZmZmO1xuICBwYWRkaW5nLWJvdHRvbTogMTAlO1xufVxuXG5ib2R5IHtcbiAgYmFja2dyb3VuZDogI2RkZDtcbn1cblxuaW9uLWljb24ge1xuICBmb250LXNpemU6IDMwcHg7XG4gIG1hcmdpbi10b3A6IDIwcHg7XG4gIGNvbG9yOiAjMDAxODQ4O1xufVxuXG4uaW1nLWF2YXRhciB7XG4gIHdpZHRoOiAzNSU7XG59XG5cbmgzIHtcbiAgY29sb3I6ICMwMDE4NDggIWltcG9ydGFudDtcbiAgbWFyZ2luLXRvcDogMHB4ICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi1ib3R0b206IDBweCAhaW1wb3J0YW50O1xufVxuXG4udGl0bGUtY2FyZCB7XG4gIHBhZGRpbmctbGVmdDogNSU7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgZm9udC13ZWlnaHQ6IDcwMDtcbn1cblxuLnR4dC1jYXJkIHtcbiAgcGFkZGluZy1sZWZ0OiA1JTtcbn1cblxucCB7XG4gIGNvbG9yOiAjMDAxODQ4ICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi10b3A6IDBweCAhaW1wb3J0YW50O1xuICBtYXJnaW4tYm90dG9tOiAwcHggIWltcG9ydGFudDtcbn1cblxuLmljb24tb25lIHtcbiAgY29sb3I6ICNmZmYgIWltcG9ydGFudDtcbiAgZm9udC1zaXplOiAyMHB4ICFpbXBvcnRhbnQ7XG4gIG1hcmdpbi10b3A6IC0yJTtcbn1cblxuLmJ0bi1zd2FwIHtcbiAgcGFkZGluZy1yaWdodDogMjBweDtcbn1cblxuLmJ0bi1jYXJkIHtcbiAgcGFkZGluZy1sZWZ0OiAwcHggIWltcG9ydGFudDtcbiAgbWFyZ2luLXRvcDogMjAlO1xufVxuXG5oNSB7XG4gIG1hcmdpbi10b3A6IDM0cHggIWltcG9ydGFudDtcbiAgZm9udC1mYW1pbHk6IFwiUG9wcGluc1wiICFpbXBvcnRhbnQ7XG59XG5cbi5wLXR4dC1jaGFsbCB7XG4gIGZvbnQtZmFtaWx5OiBcIlBvcHBpbnNcIjtcbiAgZm9udC1zaXplOiAxNXB4O1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG4gIGZvbnQtd2VpZ2h0OiA2MDA7XG4gIGNvbG9yOiAjOWI5ZGE1ICFpbXBvcnRhbnQ7XG4gIHBhZGRpbmctdG9wOiA1JTtcbn1cblxuLmgyLWNoYWxsIHtcbiAgY29sb3I6ICMwMDE4NDg7XG4gIGZvbnQtZmFtaWx5OiBcIlBvcHBpbnNcIjtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgcGFkZGluZy1sZWZ0OiA0JTtcbiAgcGFkZGluZy1ib3R0b206IDUlO1xuICBwYWRkaW5nLXRvcDogNSU7XG4gIGZvbnQtd2VpZ2h0OiA4MDA7XG59XG5cbi5jb2wtZG9zIHtcbiAgcGFkZGluZy10b3A6IDEwJTtcbiAgYmFja2dyb3VuZDogI2ZmZjtcbiAgcGFkZGluZzogNSU7XG59XG5cbi5pbWctY2hhbGwge1xuICBkaXNwbGF5OiBibG9jaztcbiAgbWFyZ2luOiAwcHggYXV0bztcbiAgd2lkdGg6IDEwMCU7XG59XG5cbi5pb24tY29sLWNoYWxsIHtcbiAgZGlzcGxheTogYmxvY2s7XG4gIG1hcmdpbjogMHB4IGF1dG87XG59XG5cbjpob3N0IGlvbi1idXR0b24ge1xuICBtYXJnaW4tdG9wOiAxNSU7XG4gIC0tYmFja2dyb3VuZDogIzAwMTg0OCAhaW1wb3J0YW50O1xuICAtLWJhY2tncm91bmQtYWN0aXZhdGVkOiAjZmZmICFpbXBvcnRhbnQ7XG4gIC0tY29sb3ItYWN0aXZhdGVkOiAjMDAxODQ4ICFpbXBvcnRhbnQ7XG4gIC0tYm9yZGVyLWNvbG9yOiAjMDAxODQ4ICFpbXBvcnRhbnQ7XG4gIGZvbnQtZmFtaWx5OiBcIlBvcHBpbnNcIiAhaW1wb3J0YW50O1xufVxuOmhvc3QgLmxpc3QtaW9zIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2ZmZiAhaW1wb3J0YW50O1xuICBib3JkZXItcmFkaXVzOiAxMHB4O1xufVxuOmhvc3QgaW9uLWl0ZW0ge1xuICAtLWJvcmRlci1jb2xvcjogI2ZmZiAhaW1wb3J0YW50O1xufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/mine/mine.page.ts":
+/*!***********************************!*\
+  !*** ./src/app/mine/mine.page.ts ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+const crypto_1 = __webpack_require__(/*! @arkecosystem/crypto */ "./node_modules/@arkecosystem/crypto/dist/index.bundled.js");
+const storageService_1 = __webpack_require__(/*! ./../services/storageService */ "./src/app/services/storageService.ts");
+const core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+const router_1 = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+const restService_1 = __webpack_require__(/*! ../services/restService */ "./src/app/services/restService.ts");
+let MinePage = class MinePage {
+    constructor(route, router, restService, storageService) {
+        this.route = route;
+        this.router = router;
+        this.restService = restService;
+        this.storageService = storageService;
+        this.products = [];
+    }
+    ngOnInit() {
+        const addressId = crypto_1.Identities.Address.fromPassphrase(this.storageService.LoginPassphrase);
+        this.restService.GetProductsByOwner(addressId).then(data => {
+            this.products = data;
+        });
+    }
+};
+MinePage.ctorParameters = () => [
+    { type: router_1.ActivatedRoute },
+    { type: router_1.Router },
+    { type: restService_1.RestService },
+    { type: storageService_1.StorageService }
+];
+MinePage = tslib_1.__decorate([
+    core_1.Component({
+        selector: 'app-mine',
+        template: tslib_1.__importDefault(__webpack_require__(/*! raw-loader!./mine.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/mine/mine.page.html")).default,
+        styles: [tslib_1.__importDefault(__webpack_require__(/*! ./mine.page.scss */ "./src/app/mine/mine.page.scss")).default]
+    }),
+    tslib_1.__metadata("design:paramtypes", [router_1.ActivatedRoute,
+        router_1.Router,
+        restService_1.RestService,
+        storageService_1.StorageService])
+], MinePage);
+exports.MinePage = MinePage;
+
+
+/***/ }),
+
 /***/ "./src/app/receive/receive-routing.module.ts":
 /*!***************************************************!*\
   !*** ./src/app/receive/receive-routing.module.ts ***!
@@ -2148,7 +2262,8 @@ let RestService = class RestService {
     constructor(http) {
         this.http = http;
         this.network = 'testnet';
-        this.baseUri = 'http://80.211.134.204:8090/api/';
+        // private baseUri: string = 'http://80.211.134.204:8090/api/';
+        this.baseUri = 'http://127.0.0.1:8090/api/';
         this.initCrypto = async () => {
             crypto_1.Managers.configManager.setFromPreset(this.network);
             crypto_1.Managers.configManager.setHeight(1632); //await this.getLatestBlockHeight());
@@ -2249,6 +2364,10 @@ let RestService = class RestService {
         const result = await this.http.get(this.baseUri + 'products/manufacturer/' + addressId).toPromise();
         return result.Data;
     }
+    async GetProductsByOwner(addressId) {
+        const result = await this.http.get(this.baseUri + 'products/owner/' + addressId).toPromise();
+        return result.Data;
+    }
 };
 RestService.ctorParameters = () => [
     { type: http_1.HttpClient }
@@ -2274,6 +2393,12 @@ exports.RestService = RestService;
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 class StorageService {
+    get LoginPassphrase() {
+        return localStorage.getItem('LoginPassphrase');
+    }
+    set LoginPassphrase(value) {
+        localStorage.setItem('LoginPassphrase', value);
+    }
 }
 exports.StorageService = StorageService;
 
@@ -2376,9 +2501,10 @@ const core_1 = __webpack_require__(/*! @angular/core */ "./node_modules/@angular
 const restService_1 = __webpack_require__(/*! ../services/restService */ "./src/app/services/restService.ts");
 const angular_1 = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/dist/fesm5.js");
 let SignPage = class SignPage {
-    constructor(restService, alertCtrl) {
+    constructor(restService, alertCtrl, ngZone) {
         this.restService = restService;
         this.alertCtrl = alertCtrl;
+        this.ngZone = ngZone;
         this.generatedPassphrase = 'Passphrase generata (readonly)';
     }
     ngOnInit() {
@@ -2403,15 +2529,15 @@ let SignPage = class SignPage {
             alert.present();
             return;
         }
-        this.generatedPassphrase = 'Generazione in corso...';
-        this.restService.CreateWallet(this.username).then(registerWalletResponse => {
-            this.generatedPassphrase = registerWalletResponse.Data.Passphrase;
-        });
+        this.ngZone.run(() => this.generatedPassphrase = 'Generazione in corso...');
+        const registerWalletResponse = await this.restService.CreateWallet(this.username);
+        this.ngZone.run(() => this.generatedPassphrase = registerWalletResponse.Data.Passphrase);
     }
 };
 SignPage.ctorParameters = () => [
     { type: restService_1.RestService },
-    { type: angular_1.AlertController }
+    { type: angular_1.AlertController },
+    { type: core_1.NgZone }
 ];
 SignPage = tslib_1.__decorate([
     core_1.Component({
@@ -2419,7 +2545,7 @@ SignPage = tslib_1.__decorate([
         template: tslib_1.__importDefault(__webpack_require__(/*! raw-loader!./sign.page.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/sign/sign.page.html")).default,
         styles: [tslib_1.__importDefault(__webpack_require__(/*! ./sign.page.scss */ "./src/app/sign/sign.page.scss")).default]
     }),
-    tslib_1.__metadata("design:paramtypes", [restService_1.RestService, angular_1.AlertController])
+    tslib_1.__metadata("design:paramtypes", [restService_1.RestService, angular_1.AlertController, core_1.NgZone])
 ], SignPage);
 exports.SignPage = SignPage;
 
@@ -2680,6 +2806,19 @@ const routes = [
                         loadChildren: () => Promise.resolve().then(() => tslib_1.__importStar(__webpack_require__(/*! ../receive/receive.module */ "./src/app/receive/receive.module.ts"))).then(m => m.ReceivePageModule)
                     }
                 ]
+            },
+            {
+                path: 'mine',
+                children: [
+                    {
+                        path: '',
+                        loadChildren: () => Promise.resolve().then(() => tslib_1.__importStar(__webpack_require__(/*! ../mine/mine.module */ "./src/app/mine/mine.module.ts"))).then(m => m.MinePageModule)
+                    }
+                ]
+            },
+            {
+                path: 'login',
+                redirectTo: '/login'
             },
             {
                 path: '',
