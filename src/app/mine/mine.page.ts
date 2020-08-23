@@ -1,3 +1,4 @@
+import { UtilService } from './../services/utilService';
 import { Identities } from '@arkecosystem/crypto';
 import { StorageService } from './../services/storageService';
 import { Component, OnInit } from '@angular/core';
@@ -17,7 +18,8 @@ export class MinePage implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private restService: RestService,
-    private storageService: StorageService) { }
+    private storageService: StorageService,
+    private utilService: UtilService) { }
 
 
   ngOnInit(): void {
