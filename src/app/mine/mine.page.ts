@@ -27,4 +27,15 @@ export class MinePage implements OnInit {
     });
   }
 
+  // AaGU6K7R7VYuEwLosPAkrPXGR6DWnbysxG (gio)
+  loginInfos() {
+    const address = Identities.Address.fromPassphrase(this.storageService.LoginPassphrase);
+    return `${address} (${this.storageService.LoginUsername})`;
+  }
+
+  copyLoginAddress() {
+    const address = Identities.Address.fromPassphrase(this.storageService.LoginPassphrase);
+    this.utilService.copyToClipboard(address);
+  }
+
 }

@@ -1,3 +1,4 @@
+import { UtilService } from './../services/utilService';
 import { Identities } from '@arkecosystem/crypto';
 import { Component, OnInit } from '@angular/core';
 import { RestService } from '../services/restService';
@@ -18,6 +19,7 @@ export class SendPage implements OnInit {
   constructor(
     private restService: RestService,
     private storageService: StorageService,
+    private utilService: UtilService,
     private router: Router,
     private alertCtrl: AlertController) { }
 
@@ -47,6 +49,17 @@ export class SendPage implements OnInit {
         alert.present();
       }
     });
+  }
+
+  // AaGU6K7R7VYuEwLosPAkrPXGR6DWnbysxG (gio)
+  loginInfos() {
+    const address = Identities.Address.fromPassphrase(this.storageService.LoginPassphrase);
+    return `${address} (${this.storageService.LoginUsername})`;
+  }
+
+  copyLoginAddress() {
+    const address = Identities.Address.fromPassphrase(this.storageService.LoginPassphrase);
+    this.utilService.copyToClipboard(address);
   }
 
 }

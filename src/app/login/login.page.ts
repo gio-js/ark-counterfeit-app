@@ -32,6 +32,7 @@ export class LoginPage implements OnInit {
     const result = await this.restService.Login(this.username, addressId);
     if (result.Data === true) {
       this.storageService.LoginPassphrase = this.passphrase;
+      this.storageService.LoginUsername = this.username;
       this.router.navigateByUrl('/tabs/tab1');
     } else {
       const alert = await this.alertCtrl.create({
@@ -42,18 +43,5 @@ export class LoginPage implements OnInit {
       alert.present();
     }
   }
-
-  /*
-  public CreateProduct() {
-    const response = this.restService.RegisterProduct({
-      ProductId: "00025-123456789-70",
-      Description: "Maglia di cotone",
-      ManufacturerAddressId: "AaRyknYVvNDTyUvpCQULtMVSwzmjWYqbKQ",
-      Metadata:["rossa", "XL"]
-    });
-
-    console.log(response);
-  }
-  */
 
 }

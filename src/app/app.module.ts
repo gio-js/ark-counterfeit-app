@@ -1,3 +1,4 @@
+import { UtilService } from './services/utilService';
 import { RestService } from './services/restService';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -21,8 +22,9 @@ import { StorageService } from './services/storageService';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     RestService,
-    StorageService
+    StorageService,
+    UtilService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
